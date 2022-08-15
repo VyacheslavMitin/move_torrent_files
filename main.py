@@ -26,15 +26,17 @@ def select_destination():
 
     print(destination_list)
 
-    if destination_list == [path_destination0, path_destination1]:
-        machine = input("Выбрать машину для загрузки:\n"
-                        "1 - Kenetic Ultra\n"
-                        "2 - Kenetic Extra\n"
-                        "Ввод:  ")
-        if machine == '1':
-            path_destination = path_destination0
-        elif machine == '2':
-            path_destination = path_destination1
+    # if destination_list == [path_destination0, path_destination1]:
+    #     machine = input("Выбрать машину для загрузки:\n"
+    #                     "1 - Kenetic Ultra\n"
+    #                     "2 - Kenetic Extra\n"
+    #                     "Ввод:  ")
+    #     if machine == '1':
+    #         path_destination = path_destination0
+    #     elif machine == '2':
+    #         path_destination = path_destination1
+    if destination_list:
+        path_destination = destination_list[0]
 
         return path_destination
 
