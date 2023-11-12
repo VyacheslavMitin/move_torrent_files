@@ -9,7 +9,6 @@ extension = "*.torrent"
 path_destination0 = os.path.join("/Volumes/WD_4TB/+TORRENT/watch/")
 path_destination1 = os.path.join("/Volumes/Seagate_2TB/+TORRENT/watch/")
 destination_list = []
-
 files_list = glob.glob(path_source + extension)
 
 print("Скрипт для перемещения торрент файлов на загрузку Transmission\n".upper())
@@ -46,7 +45,6 @@ def select_destination():
 
 def move_files():
     path = select_destination()
-
     if files_list:
         for file in files_list:
             try:
@@ -54,8 +52,10 @@ def move_files():
                 time.sleep(0.1)
                 os.remove(file)
             except PermissionError:
-                print("Ошибка работы с папкой на роутере!")
+                print("Ошибка работы с каталогом на роутере!")
                 sys.exit(1)
+            except FileNotFoundError:
+                print("Ошибка работы с файлом на роутере!")
             else:
                 file_name = file.split('/')
                 _, _, _, _, file_name = file_name
