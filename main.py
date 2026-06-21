@@ -9,7 +9,7 @@ path_source = os.path.join("/Users/sonic/Downloads/")  # Лучше развер
 
 # Пути возможных папок назначения для копирования файлов
 path_destination0 = os.path.join("/Volumes/WD_4TB/+TORRENT/watch/")
-path_destination1 = os.path.join("/Volumes/Seagate_2TB/+TORRENT/watch/")
+path_destination1 = os.path.join("/Volumes/Common/+Torrent/.watch")
 
 # Список путей к папкам назначения (будет заполняться динамически)
 destination_list = []
