@@ -9,7 +9,7 @@ path_source = os.path.join("/Users/sonic/Downloads/")  # Лучше развер
 
 # Пути возможных папок назначения для копирования файлов
 path_destination0 = os.path.join("/Volumes/WD_4TB/+TORRENT/watch/")
-path_destination1 = os.path.join("/Volumes/Common/+Torrent/.watch")
+path_destination1 = os.path.join("/Volumes/Common/+Torrent/.watch/")
 
 # Список путей к папкам назначения (будет заполняться динамически)
 destination_list = []
@@ -47,7 +47,7 @@ def select_destination():
         destination_list.append(path_destination1)
 
     # Печатаем найденные пути назначения (для информирования)
-    print(f"Целевой каталог: {destination_list[0]}\n")
+    print(f"Целевой каталог: {destination_list[0]}\n\n")
 
     # Если список названий не пуст — выбираем первый как путь назначения
     if destination_list:
@@ -128,17 +128,17 @@ def move_files():
             try:
                 os.remove(file)
                 print(f"Исходный файл удален: {file_name}")
-                print(f"Файл перемещен: {file_name}")
+                print(f"Файл перемещен: {file_name}\n")
             except PermissionError as e:
                 print(
                     f"Ошибка удаления исходного файла "
-                    f"{file_name}: {e}"
+                    f"{file_name}: {e}\n"
                 )
                 sys.exit(1)
             except FileNotFoundError:
                 # Файл уже отсутствует — возможно, его удалил другой процесс
                 print(
-                    f"Исходный файл уже отсутствует: {file_name}"
+                    f"Исходный файл уже отсутствует: {file_name}\n"
                 )
     else:
         # Если файлов для перемещения нет
